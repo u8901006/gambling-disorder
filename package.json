@@ -1,0 +1,17 @@
+{
+  "name": "gambling-disorder-daily",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "fetch": "node scripts/fetch_papers.mjs",
+    "report": "node scripts/generate_report.mjs",
+    "index": "node scripts/generate_index.mjs"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.2.5"
+  }
+}
