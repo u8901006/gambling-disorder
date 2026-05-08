@@ -26,11 +26,12 @@ async function main() {
     const dateStr = name.replace("gambling-", "").replace(".html", "");
     let display;
     try {
-      const d = new Date(dateStr + "T00:00:00+08:00");
-      const y = d.getFullYear();
-      const m = d.getMonth() + 1;
-      const day = d.getDate();
-      const wd = WEEKDAYS[d.getDay()];
+      const parts = dateStr.split("-").map(Number);
+      const y = parts[0];
+      const m = parts[1];
+      const day = parts[2];
+      const d = new Date(Date.UTC(y, m - 1, day));
+      const wd = WEEKDAYS[d.getUTCDay()];
       display = `${y}年${m}月${day}日（週${wd}）`;
     } catch {
       display = dateStr;
