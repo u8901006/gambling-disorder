@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Generate gambling disorder daily report HTML using Zhipu GLM-5-Turbo.
- * Fallback chain: GLM-5-Turbo -> GLM-4.7 -> GLM-4.7-Flash
- * max_tokens: 50000, timeout: 480s, robust JSON fault tolerance.
+ * Generate gambling disorder daily report HTML using NVIDIA Nemotron.
+ * Fallback chain: Nemotron 3 Super 120B A12B -> Nemotron 3 Nano 30B A3B.
+ * max_tokens: 16384, timeout: 480s, robust JSON fault tolerance.
  */
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
@@ -10,9 +10,9 @@ import { existsSync } from "node:fs";
 import { parseArgs } from "node:util";
 import { dirname } from "node:path";
 
-const API_BASE = process.env.ZHIPU_API_BASE || "https://open.bigmodel.cn/api/coding/paas/v4";
-const MODELS = ["glm-5-turbo", "glm-4.7", "glm-4.7-flash"];
-const MAX_TOKENS = 50000;
+const API_BASE = "https://integrate.api.nvidia.com/v1";
+const MODELS = ["nvidia/nemotron-3-super-120b-a12b", "nvidia/nemotron-3-nano-30b-a3b"];
+const MAX_TOKENS = 16384;
 const TIMEOUT_MS = 480_000;
 const MAX_RETRIES = 3;
 
@@ -170,7 +170,7 @@ function repairedTruncatedJson(str) {
   return s;
 }
 
-async function callZhipuApi(apiKey, papersData) {
+async function callNvidiaApi(apiKey, papersData) {
   const userPrompt = buildUserPrompt(papersData);
 
   for (const model of MODELS) {
@@ -189,9 +189,11 @@ async function callZhipuApi(apiKey, papersData) {
               { role: "system", content: SYSTEM_PROMPT },
               { role: "user", content: userPrompt },
             ],
-            temperature: 0.3,
-            top_p: 0.9,
+            temperature: 1.0,
+            top_p: 0.95,
             max_tokens: MAX_TOKENS,
+            stream: false,
+            chat_template_kwargs: { enable_thinking: false },
           }),
           signal: AbortSignal.timeout(TIMEOUT_MS),
         });
@@ -256,7 +258,7 @@ function generateHtml(analysis) {
   const allPapers = analysis.all_papers || [];
   const keywords = analysis.keywords || [];
   const topicDist = analysis.topic_distribution || {};
-  const modelUsed = analysis._model || "glm-5-turbo";
+  const modelUsed = analysis._model || MODELS[0];
   const totalCount = topPicks.length + allPapers.length;
 
   const topPicksHtml = topPicks.map((p) => {
@@ -404,7 +406,7 @@ function generateHtml(analysis) {
       <div class="header-meta">
         <span class="badge badge-date">📅 ${dateDisplay}</span>
         <span class="badge badge-count">📊 ${totalCount} 篇文獻</span>
-        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+<span class="badge badge-source">Powered by PubMed + NVIDIA AI</span>
       </div>
     </div>
   </header>
@@ -465,9 +467,9 @@ async function main() {
     process.exit(1);
   }
 
-  const apiKey = process.env.ZHIPU_API_KEY;
+  const apiKey = process.env.NVIDIA_API_KEY;
   if (!apiKey) {
-    console.error("[ERROR] ZHIPU_API_KEY environment variable is required");
+    console.error("[ERROR] NVIDIA_API_KEY environment variable is required");
     process.exit(1);
   }
 
@@ -489,7 +491,7 @@ async function main() {
     return;
   }
 
-  const analysis = await callZhipuApi(apiKey, papersData);
+  const analysis = await callNvidiaApi(apiKey, papersData);
   if (!analysis) {
     console.error("[ERROR] Analysis failed, cannot generate report");
     process.exit(1);
