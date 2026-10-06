@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gambling Disorder Research &middot; 賭博疾患研究文獻日報 &middot; 2026年10月7日</title>
+<meta name="description" content="2026年10月7日 賭博疾患研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .links-section { margin-top: 48px; animation: fadeUp 0.5s ease 0.4s both; }
+  .ext-link { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); }
+  .ext-link:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .ext-icon { font-size: 28px; flex-shrink: 0; }
+  .ext-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .ext-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🎲</div>
+    <div class="header-text">
+      <h1>Gambling Disorder Research &middot; 賭博疾患研究文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年10月7日</span>
+        <span class="badge badge-count">📊 26 篇文獻</span>
+<span class="badge badge-source">Powered by PubMed + NVIDIA AI</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card"><h2>📋 今日文獻趨勢</h2><p class="summary-text">今日文獻聚焦於運動博彩促銷對投注行為的影響、負責任賭博工具的激勵策略、以及認知扭曲在延遲折現與賭博危害之間的中介作用，顯示出政策干預與心理機制研究的雙重趨勢。</p></div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">⭐</span>今日精選 TOP Picks</div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#1</span>
+        <span class="emoji-icon">📊</span>
+        <span class="utility-high">高實用性</span>
+      </div>
+      <h3>運動博彩促銷與過關投注成長：體育彩金、免費投注與利潤提升如何推高複式投注比例</h3>
+      <p class="journal-source">未提供 &middot; Sportsbook Promotions and the Growth of Parlay Wagering.</p>
+      <p>研究發現運動博彩平台於2021-2023年推出彩金、免費投注與利潤提升後，複式投注（parlay）佔比顯著上升17-19個百分點，即便排除直接促銷投注後仍持續，顯示促銷改變了長期投注偏好而非僅增加投注量。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">美國合法運動博彩用戶（2018-2023年NFL賽季，約5.47億筆投注）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">運動博彩平台推出的獎金、免費投注及利潤提升促銷措施</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無促銷期間（2018-2020年作為參考基準）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">複式投注注數與投注金額的佔比顯著增加，促銷期間後仍維持較高水準，顯示產品選擇被長期改變</span></div>
+      </div>
+      <div class="card-footer">
+        <span class="tag">運動博彩</span><span class="tag">公共政策</span><span class="tag">傷害減少</span><span class="tag">責任賭博</span><span class="tag">線上賭博</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">閱讀原文 →</a>
+      </div>
+    </div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#2</span>
+        <span class="emoji-icon">🎯</span>
+        <span class="utility-high">高實用性</span>
+      </div>
+      <h3>以小額獎勵提升實體賭場玩家使用負責任賭博工具之積極效果：隨機對照試驗證明500點數可有效增加存款上限工具 enrolment</h3>
+      <p class="journal-source">未提供 &middot; Nudging the uptake of responsible gambling tools among land-based casino players: A randomized controlled trial assessing the utility of incentivization.</p>
+      <p>提供500點數（約5美元價值）的小額激勵，使實體賭場玩家使用存款上限工具的 enrolment 率從2.1%提升至17.1%，點擊 enrolment 連結率亦從25.0%升至36.1%，且效果不受獎賞敏感度或賭病症狀調節，顯示具廣泛適用性。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">314名使用電子錢包玩電子老虎機的美國賭場忠誠計畫成員（未曾 enrol 存款上限工具）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">標準資訊 + 500點數獎勵（值約5美元）以鼓勵 enrol 存款上限工具</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">僅提供標準資訊與 enrolment 連結（對照組）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">激勵組在點擊 enrolment 連結（36.1% vs 25.0%）及經運營商帳戶驗證的實際 enrolment（17.1% vs 2.1%）上顯著優於對照組</span></div>
+      </div>
+      <div class="card-footer">
+        <span class="tag">責任賭博</span><span class="tag">心理治療</span><span class="tag">動機式訪談</span><span class="tag">傷害減少</span><span class="tag">線上賭博</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">閱讀原文 →</a>
+      </div>
+    </div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#3</span>
+        <span class="emoji-icon">🧠</span>
+        <span class="utility-high">高實用性</span>
+      </div>
+      <h3>延遲折現如何透過賭博相關認知扭曲影響賭博危害：喪失控制信念與解釋偏見為關鍵中介路徑</h3>
+      <p class="journal-source">未提供 &middot; From Delay Discounting to Gambling Harm: Gambling-related Cognitive Distortions as Mediating Pathways.</p>
+      <p>在1,484名活躍賭樣本中，高延遲折現率顯著預測問題賭博嚴重程度，且此關聯主要透過「喪失控制信念」與「解釋偏見」兩種賭博特有認知扭曲間接傳遞，凸顯認知重構在衝動與危害之間的核心角色。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">1,484名活躍賭徒（未指定地區，但具賭博行為）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">延遲折現任務（行為測量衝動決策）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">低延遲折現者作為內部對照</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">高延遲折現 → ↑問題賭博嚴重程度（經教育與SES控制後仍�著）；中介分析證實此路徑主要經由喪失控制信念與解釋偏見傳遞</span></div>
+      </div>
+      <div class="card-footer">
+        <span class="tag">認知行為治療</span><span class="tag">衝動控制</span><span class="tag">賭博疾患</span><span class="tag">問題性賭博</span><span class="tag">神經科學</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">閱讀原文 →</a>
+      </div>
+    </div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#4</span>
+        <span class="emoji-icon">💻</span>
+        <span class="utility-mid">中實用性</span>
+      </div>
+      <h3>電�式簡介性干預與轉介治療（e-SBIRT）對賭徒之初步效果：線上隨機試驗顯示雖未顯著改善主要結果，但在自我控制感與求助行為上具探索性正向趨勢</h3>
+      <p class="journal-source">未提供 &middot; Evaluating the Efficacy of Electronic Screening, Brief Intervention, and Referral to Treatment (e-SBIRT) for Gambling: An Online Pilot Randomised Trial.</p>
+      <p>雖e-SBIRT在12週內未顯著優於僅評估與資訊提供的主動對照組於賭博危害或控制感的主要改善，但探索性分析發現其在提升「感知控制能力」（p=0.043）與12週隨訪求助率上具正向趨勢， suggering 介入內容尚需優化。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">83名英國成年人（中等以上嚴重度賭博，PGSI ≥4），男性佔65.1%，平均年齡40.6歲</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">電子版SBIRT：動機式訪談為基礎的簡介性干預，含個人化規範反饋、資訊提供與復發預防</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">僅提供評估與資訊（主動對照）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">主要結果（賭博危害、控制感）無顯著條件效應；但e-SBIRT組在12週的感知控制能力改善探索性顯著（p=0.043），並趨向更高求助率</span></div>
+      </div>
+      <div class="card-footer">
+        <span class="tag">篩檢工具</span><span class="tag">心理治療</span><span class="tag">動機式訪談</span><span class="tag">復發預防</span><span class="tag">線上賭博</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">閱讀原文 →</a>
+      </div>
+    </div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#5</span>
+        <span class="emoji-icon">🎁</span>
+        <span class="utility-high">高實用性</span>
+      </div>
+      <h3>洛特箱購買與問題賭博嚴重度及危害之關聯：即使控制傳統賭博行為，其購買頻率與花費仍顯著預測更高問題賭博風險</h3>
+      <p class="journal-source">未提供 &middot; Loot box purchases are associated with problem gambling severity and harms beyond traditional gambling activities.</p>
+      <p>在3,709名常賭且玩電玩的成年樣本中，購買洛特箱者更年輕、單身且較可能有併發症；即使控制傳統賭博（如老虎機、體育博彩），洛特箱購買頻率與花費仍顯著關聯更高問題賭博嚴重度與危害，支持其應被視為具賭博性質的行為。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">3,709名美國成年常賭者且定期玩電子遊戲（國家層級分層樣本）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">洛特箱購買行為（頻率與花費）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">未購買洛特箱者（在控制傳統賭博變數後）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">控制傳統賭博後，洛特箱購買頻率與花費仍顯著預測 ↑問題賭博嚴重度與↑賭博相關危害</span></div>
+      </div>
+      <div class="card-footer">
+        <span class="tag">Loot box</span><span class="tag">青少年</span><span class="tag">問題性賭博</span><span class="tag">行為成癮</span><span class="tag">公共政策</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">閱讀原文 →</a>
+      </div>
+    </div></div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">📚</span>其他值得關注的文獻</div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🧠</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>虛擬賭博中賞音視訊線索對神經處理的影響：fMRI交叉設計研究顯示獎勵線索改變反饋期腦區活化但未改變選擇行為</h3>
+      <p class="journal-source">未提供</p>
+      <p>在20名健康志願者中，賞音視訊線索未顯著改變高風險選擇或期望值一致決策頻率，但贏家反饋時卻使賞音視訊組在顳葉、視丘、 parietal 與 insular 皮質的激活顯著減少，提示其改變了獎贏的神經處理而非行為表現。</p>
+      <div class="card-footer">
+        <span class="tag">fMRI</span><span class="tag">神經影像</span><span class="tag">獎賞迴路</span><span class="tag">賭博疾患</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">📊</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>賭博傷害中ADHD流行率系統性評論：經驗樣本中約24%佔有ADHD，遠高於一般人口2.58%，提示神經發育差異在賭博風險中的重要角色</h3>
+      <p class="journal-source">未提供</p>
+      <p>經由14項觀察性研究的系統性評論與meta分析，發現經歷賭博傷害者中ADHD佔有率達24%（95%CI 0.18–0.29），顯著高於一般人口之2.58%，雖異質性高但凸顯ADHD為賭博傷害重要併發症，提篡需考慮神經科學篩檢。</p>
+      <div class="card-footer">
+        <span class="tag">ADHD</span><span class="tag">流行病學</span><span class="tag">盛行率</span><span class="tag">篩檢工具</span><span class="tag">賭博疾患</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🧠</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>伊利諾伊州立大學學生透過ERP-fNIRS多模態特徵分辨網路遊戲障礙：結合腦電與功能近紅外線訊號使分類準確率達85.4%，提�前額葉葉減少為潛在生物標誌</h3>
+      <p class="journal-source">未提供</p>
+      <p>透過同時記錄ERP與fNIRS訊號，結合機器學習（KNN）將網路遊戲障礙者與休閒玩家區分，準確率從單獨使用ERP的79.95%提升至85.4%，並發現背內側前腦葉活化減少可能為IGD的神經生物標誌。</p>
+      <div class="card-footer">
+        <span class="tag">fNIRS</span><span class="tag">ERP</span><span class="tag">機器學習</span><span class="tag">網路遊戲障礙</span><span class="tag">神經影像</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🌐</span>
+        <span class="utility-low utility-sm">低</span>
+      </div>
+      <h3>鐵桿運動彩迷的賭博認知與風險行為網絡結構：在剛果民主共和國運動投注者中，內疚與社會壓力為橋樑節點，G1為核心樞紐，支持I-PACE模型的文化普遍性</h3>
+      <p class="journal-source">未提供</p>
+      <p>對2,261名剛果運動投注者進行網路分析，發現內疚（Guilt）與G1為最中心節點，內疚與社會壓力為橋樑節點連接認知與社會領域，雖整體無性別差異但敏感子網路顯示結構差異，首次在撒哈拉以南非洲揭示賭博認知網絡結構。</p>
+      <div class="card-footer">
+        <span class="tag">運動博彩</span><span class="tag">賭博疾患</span><span class="tag">認知行為治療</span><span class="tag">社會決定因素</span><span class="tag">行為成癮</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">👧</span>
+        <span class="utility-low utility-sm">低</span>
+      </div>
+      <h3>青少年行為成癮綜述：強調需以連續光譜而非診斷門檻理解遊戲、賭博、色情、社交媒體與AI聊天機器人的問題使用，並提出彈性治療模式與對新興介入（如神經調節）之研究需求</h3>
+      <p class="journal-source">未提供</p>
+      <p>審閱證據後建議將青少年行為成癮視為連續光譜問題，避免過度依賴診斷門檻，主張提供依需求變化的彈性治療模式，並強調對 neuromodulation 等新興介入建立更強證據基礎的必要性。</p>
+      <div class="card-footer">
+        <span class="tag">青少年</span><span class="tag">行為成癮</span><span class="tag">問題性賭博</span><span class="tag">網路遊戲障礙</span><span class="tag">人工智慧</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">👨‍👩‍👧</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>父母與青少年網路使用雙向溝通量表（PCICS）之開發與驗證：發現青少年自身 perceiving low barriers to consultation 與問題網路使用負相關，強調青少年主觀體驗在預防中的關鍵作用</h3>
+      <p class="journal-source">未提供</p>
+      <p>透過824對日本父母-青少年雙向調查開發PCICS，發現青少年報告的「低 perceived 諮商障礙」與問題網路使用顯著負相關（β=-0.51），而父母接受度與青少年PIU關聯較弱，凸顯評估必須納入青少年主觀視角。</p>
+      <div class="card-footer">
+        <span class="tag">青少年</span><span class="tag">家庭傷害</span><span class="tag">篩檢工具</span><span class="tag">問題性賭博</span><span class="tag">網路遊戲障礙</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">👨‍👩‍👧</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>父母與青少年網路溝通的保護作用橫斷面研究：青少年自身報告的低諮商障礙感比父母報告更強預測較低問題網路使用，顯示青少年主觀體驗是關鍵保護因素</h3>
+      <p class="journal-source">未提供</p>
+      <p>分析824對日本父母-青少年資料後發現，青少年自我報告的「低 perceived 諮商障礙」（β=-0.51）對降低自身PIU的貢獻遠大於父母報告（β=0.10，不顯著），且此效果不受父母PIU、通報平均水準或性別年齡調整影響，支持青少年主觀體驗在預防中的核心角色。</p>
+      <div class="card-footer">
+        <span class="tag">青少年</span><span class="tag">家庭傷害</span><span class="tag">篩檢工具</span><span class="tag">問題性賭博</span><span class="tag">網路遊戲障礙</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">💪</span>
+        <span class="utility-low utility-sm">低</span>
+      </div>
+      <h3>睾酮在男性中與反饋相關生理反應正相關，並預測較高風險決策：在損失後，高睾酮男性顯著以生理反應強度預測後續風險選擇，支持體標記假設的部分機制</h3>
+      <p class="journal-source">未提供</p>
+      <p>在55名成人（27名女性）中，睾酮與互個人層級風險取向無關，但在男性中，高睾酮水平使得損失或贏得後的皮電反應（feedback-related）顯著正向預測後續風險選擇；低睾酮男性則無此關聯，提示睾酮可能調節贏損反饋對未來決策的影響，僅在男性中顯現。</p>
+      <div class="card-footer">
+        <span class="tag">多巴胺</span><span class="tag">衝動控制</span><span class="tag">獎賞迴路</span><span class="tag">神經科學</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">📱</span>
+        <span class="utility-low utility-sm">低</span>
+      </div>
+      <h3>癲癇患者與對照組在問題智慧手機使用方面無顯著差異：儘管癲癇患者憂鬱症狀較重，但焦慮症為問題數位行為的共同預測因子，而非癲癇本身</h3>
+      <p class="journal-source">未提供</p>
+      <p>對102名癲癇成人與102名對照組的研究顯示，對照組在噁心恐懼症（nomophobia）、智慧手機成癮與社交媒體成癮方面得分皆顯著較高，而癲癇組僅在憂鬱症狀上顯著升高；焦慮症（HADS-A）為兩組問題數位行為的最強預測因子，癲癇相關臨床變數影響甚微。</p>
+      <div class="card-footer">
+        <span class="tag">焦慮症</span><span class="tag">憂鬱症</span><span class="tag">物質使用</span><span class="tag">問題性賭博</span><span class="tag">網路遊戲障礙</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">📱</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>羅德島青少年博彩行為變化調查：雖整體參與率穩定，但在賭徒中彩票、體育博彩、老虎機與APP賭博參與度顯著上升，顯示行動化與多樣化趨勢</h3>
+      <p class="journal-source">未提供</p>
+      <p>分析2022年（n=1,022）與2024年（n=1,008）羅德島18-25歲青少年的重複橫斷面資料，發現雖整體賭博參與率無顯著變化，但已賭徒中彩票（AOR=1.36）、體育博彩（AOR=1.65）、老虎機（AOR=2.99）與APP賭博（AOR=2.14）參與度顯著增加，且所參與賭博類型數平均上升1.28倍，提示行動化與多樣化是主要變化方向。</p>
+      <div class="card-footer">
+        <span class="tag">運動博彩</span><span class="tag">線上賭博</span><span class="tag">青少年</span><span class="tag">問題性賭博</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">💳</span>
+        <span class="utility-high utility-sm">高</span>
+      </div>
+      <h3>英國開放銀行資料顯示現行150英鎊淨存款門檻偏重傷害預防而非自由保留：模擬顯示三分之二有風險玩家超標，但將門檻提高至約187英鎊可改善平衡，而純粹傷害導向則需降至39英鎊</h3>
+      <p class="journal-source">未提供</p>
+      <p>透過424名英國玩者的自報PGSI與開放銀行資料，發現現行£150淨存款門檻使67%有風險玩家（PGSI≥1）超標，但亦有49%低風險玩家被誤判；將門檻調整至£186.9可略改善平衡（AUC 0.66→？），而傷害導向最佳門檻為£39.0，顯示當前政策偏重保護高風險群體。</p>
+      <div class="card-footer">
+        <span class="tag">公共政策</span><span class="tag">傷害減少</span><span class="tag">責任賭博</span><span class="tag">線上賭博</span><span class="tag">流行病學</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🧠</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>網路遊戲障礙與內在獎賞處理異常同步化：fMRI顯示IGD群體在內在獎賞處理時左視丘到右尾狀核的皮質束縛功能連接過度增強，支持自我效能-感官驅動模型</h3>
+      <p class="journal-source">未提供</p>
+      <p>比較21名IGD患者與23名休閒玩者在fMRI中進行cue-craving任務，發現IGD群體在內在獎賞處理時左視丘→右尾狀核的連接顯著增強，且在遊戲線索下顯示預設模式網絡與獎賞網絡（如accumbens-PFC）連接異常加強，提示內在獎賞劫持可能是IGD的核心神經機制。</p>
+      <div class="card-footer">
+        <span class="tag">fMRI</span><span class="tag">神經影像</span><span class="tag">多巴胺</span><span class="tag">獎賞迴路</span><span class="tag">網路遊戲障礙</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🎮</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>透過網路介入分析評估香港小學生網路公民夥伴預防計畫：發現參與後減少遊戲驅動的肯定依賴、渴求與關係風險三個核心症狀，並間接改善興趣喪失、社會逃避與控制受損等其他症狀</h3>
+      <p class="journal-source">未提供</p>
+      <p>對600名香港小學四至六年級學生進行學校聚類隨機試驗，透過網路介入分析（NIA）發現「數位網路公民夥伴」計畫參與後，遊戲驅動的肯定依賴、渴求與關係風險三個症狀顯著減少，並進一步證實興趣喪失、社會逃避與控制受損等其他症狀亦受益，證實NIA在揭示症狀變化機制上的價值。</p>
+      <div class="card-footer">
+        <span class="tag">網路遊戲障礙</span><span class="tag">預防</span><span class="tag">兒童</span><span class="tag">行為成癮</span><span class="tag">認知行為治療</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🏠</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>美國退役軍人無家可歸現狀：精神疾病與童年逆境為主要關聯因素，且無家可歸史顯著增加目前酒毒癮與問題賭博風險</h3>
+      <p class="journal-source">未提供</p>
+      <p>分析2025-2026年全國代表性調查（NHRVS，n=2,636）後發現，加權終生無家可歸率為11.4%，顯著高於2015年（8.5%）；終生大鬱症（11.8%）、廣泛焦慮（11.2%）與創傷後壓力（10.7%）為最強關聯，且無家可歸史顯著提升目前酒精（AOR=1.76）、藥物（AOR=2.24）、尼古丁（AOR=2.84）使用障礙與問題賭博（AOR=2.13）風險。</p>
+      <div class="card-footer">
+        <span class="tag">物質使用</span><span class="tag">問題性賭博</span><span class="tag">自殺風險</span><span class="tag">心理治療</span><span class="tag">社會決定因素</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">💊</span>
+        <span class="utility-high utility-sm">高</span>
+      </div>
+      <h3>普拉米派索與精神疾病個人賭博疾患發生率之全國登記隊列研究：證實劑量反應關存在，雙相情緒障礙患者風險最高，提醒長期使用多巴胺激動劑需監控衝動控制障礙</h3>
+      <p class="journal-source">未提供</p>
+      <p>對2006-2021年間被處方普拉米派索的精神疾病患者進行全國登記隊列研究，發現累積劑量與臨床診斷的賭博疾患發生率呈明確劑量反應關係，雙相情緒障礙患者風險尤為顯著；雖絕對風險低（可能反映診斷不足），但臨床後果重大，強調需暴露風險感知的處方與系統性監控。</p>
+      <div class="card-footer">
+        <span class="tag">藥物治療</span><span class="tag">雙相情緒障礙</span><span class="tag">賭博疾患</span><span class="tag">衝動控制</span><span class="tag">多巴胺</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🎁</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>青少年洛特箱行為機制與問題結果之系統性文獻回顧：提出四條理論路徑解釋其如何透過遊戲-洛特箱-賭博收斂、多因素路徑、規範壓力調節與問題使用-認知回饋迴路影響青少年行為</h3>
+      <p class="journal-source">未提供</p>
+      <p>針對2017-2025年26項經驗研究進行PRISMA系統性回顧，依S-O-R模型闡明洛特箱對青少年行為影響的四條理論途徑：(1)遊戲-洛特箱-賭博收斂路徑，(2)多因素路徑影響參與，(3)感知規範壓力調節路徑，(4)問題使用與認知-行為因素的回饋迴路，為預防與青少年保護提供概念框架。</p>
+      <div class="card-footer">
+        <span class="tag">Loot box</span><span class="tag">青少年</span><span class="tag">問題性賭博</span><span class="tag">行為成癮</span><span class="tag">公共政策</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🧠</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>賭博相關meta認知、情緒調節與賭博疾患之雙波長期研究：正負面賭博meta認知均為GD傾向之強預測因子，負面meta認知亦被GD傾向與情緒調節預測，揭示惡性循環與情緒調節的保護潛力</h3>
+      <p class="journal-source">未提供</p>
+      <p>對585名中國終身賭徒進行兩波橫斷面問卷調查，跟蹤分析發現正負面賭博meta認知均強烈預測未來賭博疾患傾向；更重要的是，負面meta認知既被賭博疾患傾向預測，也被情緒調節預測，提示存在meta認知-GD惡性循環，而情緒調節可能具有中斷此循環的保護作用，為整合性治療提供線索。</p>
+      <div class="card-footer">
+        <span class="tag">認知行為治療</span><span class="tag">情緒調節</span><span class="tag">賭博疾患</span><span class="tag">問題性賭博</span><span class="tag">神經科學</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">⚖️</span>
+        <span class="utility-low utility-sm">低</span>
+      </div>
+      <h3>成年人戒斷心理興奮劑後對可控環境的偏好增加，但酒精與鴉片類戒斷則偏好不可控結果：藉由階層賭博任務與建模顯示多巴胺系統可能編碼控制的主觀價值</h3>
+      <p class="journal-source">未提供</p>
+      <p>透過階層賭博任務結合物質使用自報與計算模型發現，較長時間戒斷心理興奮劑會顯著增加對可控環境的偏好；相反地，戒斷鴉片類或酒精者則偏好發散結果分布或自由選擇，無論環境是否可控，提示多巴胺系統在編碼「控制感」的效用中可能具有特殊角色，與動機行為的控制偏好解脫關聯。</p>
+      <div class="card-footer">
+        <span class="tag">多巴胺</span><span class="tag">衝動控制</span><span class="tag">物質使用</span><span class="tag">酒精使用</span><span class="tag">神經科學</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🌍</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>哈薩克賭博成長背景下易受脆弱群體之社會人口特徵：男性與中年人（45-59歲）為最高風險群體，低收入與教育程度不足則加深依賴程度，顯示社會結構在賭博風險中的調節作用</h3>
+      <p class="journal-source">未提供</p>
+      <p>透過SOGS量表對782名哈薩克成人進行賭博嚴重度評估，發現男性與中年人（45-59歲）為賭博上毒的最高風險群體，女性與老年人風險較低；低收入與低教育水準顯著關聯更高依賴程度；質性訪談進一步說明文化與可及性因素，康復評估顯示介入計畫有效。</p>
+      <div class="card-footer">
+        <span class="tag">流行病學</span><span class="tag">社會決定因素</span><span class="tag">賭博疾患</span><span class="tag">問題性賭博</span><span class="tag">心理治療</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🎖️</span>
+        <span class="utility-low utility-sm">低</span>
+      </div>
+      <h3>英國武裝部隊人員賭博傷害支援可及性混合方法研究：發現人員鮮少尋求基地內支援，現有服務被低度認識，但曾求助時專業經驗豐富的醫護與福利人員同樣有效，顯示提升專業可及性為關鍵</h3>
+      <p class="journal-source">未提供</p>
+      <p>調查438名武裝部隊服務人員與94名專業醫護福利人員後發現，人員極少尋求基地內賭博傷害支援，對現有服務的認識度低；但曾尋求支援時，無論是醫護還是福利人員，其專業經驗程度是促進有意義互動的關鍵因子，建議應聚焦提升專業服務的可及性與品質而非僅增加數量。</p>
+      <div class="card-footer">
+        <span class="tag">物質使用</span><span class="tag">問題性賭博</span><span class="tag">心理治療</span><span class="tag">軍人</span><span class="tag">傷害減少</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🧘</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>身體導向心理療法在行為成癮中的療效首次meta分析：瑜伽、正念與 somaic 介入顯示大幅短期症狀減少（g=-2.62），但異質性極高，提示需機制導向後續研究以隔離有效成分</h3>
+      <p class="journal-source">未提供</p>
+      <p>對9項RCT（總N=573）的瑜伽、正念或 somaic 介入針對賭博、遊戲或性強迫行為進行隨機對照試驗meta分析，發現匯總效應值達g=-2.62（95%CI [-4.73,-0.51]，p=.015），顯示具大幅短期益處，但I²=95.6%提示高度異質性，未報告嚴重不良反應，提出分階段、生物標誌導向的治療框架以未來聚焦機制與長期效應。</p>
+      <div class="card-footer">
+        <span class="tag">正念</span><span class="tag">心理治療</span><span class="tag">行為成癮</span><span class="tag">賭博疾患</span><span class="tag">神經科學</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/2026/" target="_blank" rel="noopener">PubMed →</a>
+      </div>
+    </div></div>
+
+  <div class="topic-section section"><div class="section-title"><span class="section-icon">📊</span>主題分佈</div>
+      <div class="topic-row">
+        <span class="topic-name">賭博疾患</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+        <span class="topic-count">10</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">運動博彩</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:40%"></div></div>
+        <span class="topic-count">4</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">Loot box</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:30%"></div></div>
+        <span class="topic-count">3</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">認知行為治療</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:60%"></div></div>
+        <span class="topic-count">6</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">雙相情緒障礙</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:20%"></div></div>
+        <span class="topic-count">2</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">ADHD</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:20%"></div></div>
+        <span class="topic-count">2</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">網路遊戲障礙</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+        <span class="topic-count">5</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">公共政策</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+        <span class="topic-count">5</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">傷害減少</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:40%"></div></div>
+        <span class="topic-count">4</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">責任賭博</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:40%"></div></div>
+        <span class="topic-count">4</span>
+      </div></div>
+
+  <div class="keywords-section section"><div class="section-title"><span class="section-icon">🏷️</span>關鍵字</div><div class="keywords"><span class="keyword">賭博疾患</span><span class="keyword">運動博彩</span><span class="keyword">Loot box</span><span class="keyword">責任賭博</span><span class="keyword">認知行為治療</span><span class="keyword">雙相情緒障礙</span><span class="keyword">ADHD</span><span class="keyword">網路遊戲障礙</span><span class="keyword">公共政策</span><span class="keyword">傷害減少</span></div></div>
+
+  <div class="links-section">
+    <a href="https://www.leepsyclinic.com/" class="ext-link" target="_blank" rel="noopener">
+      <span class="ext-icon">🏥</span>
+      <span class="ext-name">李政洋身心診所首頁</span>
+      <span class="ext-arrow">→</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="ext-link" target="_blank" rel="noopener">
+      <span class="ext-icon">📬</span>
+      <span class="ext-name">訂閱電子報</span>
+      <span class="ext-arrow">→</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="ext-link" target="_blank" rel="noopener">
+      <span class="ext-icon">☕</span>
+      <span class="ext-name">Buy Me a Coffee</span>
+      <span class="ext-arrow">→</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3-super-120b-a12b</span>
+    <span><a href="https://github.com/u8901006/gambling-disorder">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
